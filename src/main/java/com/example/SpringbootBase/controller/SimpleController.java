@@ -1,5 +1,8 @@
 package com.example.SpringbootBase.controller;
 
+import com.example.SpringbootBase.config.MessageProperties;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -7,12 +10,14 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.core.env.Environment;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @RestController
 @RequestMapping(path = "/*")
 public class SimpleController {
 
+    private static final Logger logger = LoggerFactory.getLogger(SimpleController.class);
 
     @Value("${JAVA_HOME}")
     private String javaHome;
@@ -23,14 +28,19 @@ public class SimpleController {
     @Value("${user1.password}")
     private String password;
 
+    @Autowired
+    MessageProperties messageProperties;
+
     @GetMapping(path ="/myprams", produces = "application/json")
     public String getSimpleParams(){
 
-        System.out.println("Javahome is set to: "+javaHome);
+        logger.info("Javahome is set to: "+javaHome);
 
-        System.out.println("sample user and password subs:  "+name+ " : "+password);
+        logger.info("sample user and password subs:  "+name+ " : "+password);
 
-            return javaHome;
+        logger.info("messageProperties are: "+messageProperties.getWelcome() +" : "+messageProperties.getGoodbye());
+
+        return javaHome;
     }
 
     @Bean
