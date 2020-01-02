@@ -13,10 +13,8 @@ import org.springframework.core.env.Environment;
 @RequestMapping(path = "/*")
 public class SimpleController {
 
-    @Autowired
-    private Environment env;
 
-    @Value("#{systemEnvironment['JAVA_HOME']}")
+    @Value("${JAVA_HOME}")
     private String javaHome;
 
     @Value("${user1.name}")
@@ -28,17 +26,11 @@ public class SimpleController {
     @GetMapping(path ="/myprams", produces = "application/json")
     public String getSimpleParams(){
 
-        String m2home = System.getenv("M2_HOME");
-
-        System.out.println("from get SimpleParams: "+m2home);
-
-        System.out.println("env.get props: "+env.getProperty("JAVA_HOME"));
-
         System.out.println("Javahome is set to: "+javaHome);
 
         System.out.println("sample user and password subs:  "+name+ " : "+password);
 
-        return "Narendra";
+            return javaHome;
     }
 
     @Bean
