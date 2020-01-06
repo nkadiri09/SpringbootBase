@@ -3,3 +3,8 @@ message:
     welcome: Welcome...
     goodbye: Goodbye...
 JAVA_HOME: This value is javahome
+
+
+spring:
+  profiles:
+    active: dev
