@@ -9,11 +9,6 @@ JAVA_HOME: This value is javahome
 spring:
   profiles: local
 
-message:
-  default:
-    welcome: Welcome localenv...
-    goodbye: Goodbye localenv...
-
 ---
 spring:
   profiles: dev
@@ -22,3 +17,12 @@ message:
   default:
     welcome: Welcome dev...
     goodbye: Goodbye dev...
+
+---
+spring:
+  profiles: qa
+
+message:
+  default:
+    welcome: Welcome qa...
+    goodbye: Goodbye qa...
