@@ -1,15 +1,19 @@
-message:
-  default:
-    welcome: Welcome common...
-    goodbye: Goodbye common...
+
+## configure common properties here
+
 JAVA_HOME: This value is javahome
 
----
 
+
+---
+## configure local properties here
 spring:
   profiles: local
+server:
+  port: 8061
 
 ---
+## configure dev properties here
 spring:
   profiles: dev
 
@@ -17,8 +21,10 @@ message:
   default:
     welcome: Welcome dev...
     goodbye: Goodbye dev...
-
+server:
+  port: 8051
 ---
+## configure qa properties here
 spring:
   profiles: qa
 
@@ -26,3 +32,5 @@ message:
   default:
     welcome: Welcome qa...
     goodbye: Goodbye qa...
+server:
+  port: 8041
