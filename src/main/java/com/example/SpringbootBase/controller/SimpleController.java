@@ -39,7 +39,6 @@ public class SimpleController {
         logger.info("sample user and password subs:  "+name+ " : "+password);
 
         logger.info("messageProperties are: "+messageProperties.getWelcome() +" : "+messageProperties.getGoodbye());
-
         return javaHome;
     }
 
