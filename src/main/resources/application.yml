@@ -1,5 +1,24 @@
 message:
   default:
-    welcome: Welcome...
-    goodbye: Goodbye...
+    welcome: Welcome common...
+    goodbye: Goodbye common...
 JAVA_HOME: This value is javahome
+
+---
+
+spring:
+  profiles: local
+
+message:
+  default:
+    welcome: Welcome localenv...
+    goodbye: Goodbye localenv...
+
+---
+spring:
+  profiles: dev
+
+message:
+  default:
+    welcome: Welcome dev...
+    goodbye: Goodbye dev...
