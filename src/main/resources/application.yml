@@ -4,7 +4,6 @@
 JAVA_HOME: This value is javahome
 
 
-
 ---
 ## configure local properties here
 spring:
