@@ -19,7 +19,7 @@ public class SimpleController {
 
     private static final Logger logger = LoggerFactory.getLogger(SimpleController.class);
 
-    @Value("${JAVA_HOME}")
+    @Value("${JAVA_HOME: default Java_Home}")
     private String javaHome;
 
     @Value("${user1.name}")
@@ -27,6 +27,9 @@ public class SimpleController {
 
     @Value("${user1.password}")
     private String password;
+
+    @Value("${my.list.values}")
+    private String listValues;
 
     @Autowired
     MessageProperties messageProperties;
@@ -45,6 +48,14 @@ public class SimpleController {
     @Bean
     protected static PropertySourcesPlaceholderConfigurer property(){
         return new PropertySourcesPlaceholderConfigurer();
+    }
+
+    @GetMapping(path ="/myvalues", produces = "application/json")
+    public String getvalues(){
+
+        logger.info("ListValues are set to: "+listValues);
+
+        return listValues;
     }
 
 }
