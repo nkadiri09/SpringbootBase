@@ -3,9 +3,9 @@
 
 JAVA_HOME: This value is javahome
 
-
 ---
 ## configure local properties here
+
 spring:
   profiles: local
 server:
@@ -13,6 +13,7 @@ server:
 
 ---
 ## configure dev properties here
+
 spring:
   profiles: dev
 
@@ -22,8 +23,10 @@ message:
     goodbye: Goodbye dev...
 server:
   port: 8051
+
 ---
 ## configure qa properties here
+
 spring:
   profiles: qa
 
