@@ -6,7 +6,7 @@
     @ImportRespurce({"classpath:${tbs.secure.client.config.file}"})
 
     @Configuration
-    @Bean
+    @Bean // defining a bean
     @Profile("<profileName>")
     @Value
     @Qualifier
