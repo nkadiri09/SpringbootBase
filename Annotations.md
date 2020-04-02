@@ -38,3 +38,6 @@ https://www.java67.com/2018/05/difference-between-springbootapplication-vs-Enabl
 ###             or
             @ComponentScan(excludeFilters = 
               @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, value = Rose.class))
+              
+### @Import and @ImportResource example
+https://www.boraji.com/spring-4-import-and-importresource-example
