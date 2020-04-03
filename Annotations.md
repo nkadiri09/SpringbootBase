@@ -29,6 +29,7 @@ https://www.java67.com/2018/05/difference-between-springbootapplication-vs-Enabl
          @Configuration
          @EnableConfigurationProperties
          @ComponentScan
+ # @SpringBootApplication(scanBasePackages={"com.websystique.springboot"})
          
  # @ComponentScan will scan all components and child packages in it,we can exclude packages with
          
