@@ -2,6 +2,10 @@
 ## configure common properties here
 
 JAVA_HOME: This value is javahome
+message:
+  default:
+    welcome: Welcome local...
+    goodbye: Goodbye local...
 
 ---
 ## configure local properties here

@@ -21,9 +21,6 @@ public class SimpleController {
 
     private static final Logger logger = LoggerFactory.getLogger(SimpleController.class);
 
-    @Value("${JAVA_HOME: default Java_Home}")
-    private String javaHome;
-
     @Value("${user1.name}")
     private String name;
 
@@ -39,12 +36,10 @@ public class SimpleController {
     @GetMapping(path ="/myprams", produces = "application/json")
     public String getSimpleParams(){
 
-        logger.info("Javahome is set to: "+javaHome);
-
         logger.info("sample user and password subs:  "+name+ " : "+password);
 
         logger.info("messageProperties are: "+messageProperties.getWelcome() +" : "+messageProperties.getGoodbye());
-        return javaHome;
+        return "javaHome";
     }
 
     @Bean
